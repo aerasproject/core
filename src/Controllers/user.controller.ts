@@ -1,4 +1,4 @@
-import { User } from "../Types/User";
+import { IUser } from "../Types/User";
 
 import { Api } from "..";
 
@@ -16,12 +16,12 @@ export interface ILoginParams {
 }
 
 export interface ILoginResponse {
-    user: User;
+    user: IUser;
     token: string;
 }
 
 export class UserController {
-    public async create(data: ICreateParams): Promise<User> {
+    public async create(data: ICreateParams): Promise<IUser> {
         return Api.post('/user', data);
     };
     
