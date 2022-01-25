@@ -8,3 +8,6 @@ export * from './Controllers/user.controller';
 
 // TYPE
 export * from './Types/User';
+
+// UTILS
+export * from './Utils/ApiErrorInterceptor';
