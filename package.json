@@ -1,0 +1,23 @@
+{
+  "name": "@aerasapp/core",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aerasapp/core.git"
+  },
+  "author": "Aeras",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aerasapp/core/issues"
+  },
+  "homepage": "https://github.com/aerasapp/core#readme",
+  "dependencies": {
+    "typescript": "^4.5.5"
+  }
+}
