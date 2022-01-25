@@ -15,7 +15,7 @@ export interface ILoginParams {
     password: string;
 }
 
-export interface ILoginResponse {
+export interface ITokenResponse {
     user: IUser;
     token: string;
 }
@@ -29,7 +29,7 @@ export class UserController {
         return (await Api.delete(`/user/${userId}`));
     };
     
-    public async login(data: ILoginParams): Promise<ILoginResponse> {
+    public async login(data: ILoginParams): Promise<ITokenResponse> {
         return (await Api.post('/user/login', data)).data();
     };
 }
