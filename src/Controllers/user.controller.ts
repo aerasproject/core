@@ -22,14 +22,14 @@ export interface ILoginResponse {
 
 export class UserController {
     public async create(data: ICreateParams): Promise<IUser> {
-        return Api.post('/user', data);
+        return (await Api.post('/user', data)).data();
     };
     
     public async delete(userId: string): Promise<void> {
-        return Api.delete(`/user/${userId}`);
+        return (await Api.delete(`/user/${userId}`));
     };
     
     public async login(data: ILoginParams): Promise<ILoginResponse> {
-        return Api.post('/user/login', data);
+        return (await Api.post('/user/login', data)).data();
     };
 }
