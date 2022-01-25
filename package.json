@@ -1,6 +1,6 @@
 {
   "name": "@aerasapp/core",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -19,7 +19,6 @@
   "homepage": "https://github.com/aerasapp/core#readme",
   "dependencies": {
     "axios": "^0.25.0",
-    "dotenv": "^14.3.0",
     "typescript": "^4.5.5"
   },
   "devDependencies": {
