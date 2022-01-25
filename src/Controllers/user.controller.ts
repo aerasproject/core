@@ -21,7 +21,7 @@ export interface ITokenResponse {
 }
 
 export class UserController {
-    public async create(data: ICreateParams): Promise<IUser> {
+    public async create(data: ICreateParams): Promise<ITokenResponse> {
         return (await Api.post('/user', data)).data();
     };
     
