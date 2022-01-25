@@ -2,7 +2,7 @@ import { User } from "../Types/User";
 
 import { Api } from "..";
 
-export interface CreateParams {
+export interface ICreateParams {
     name: string;
     email: string;
     password: string;
@@ -10,18 +10,18 @@ export interface CreateParams {
     role: string;
 }
 
-export interface LoginParams {
+export interface ILoginParams {
     email: string;
     password: string;
 }
 
-export interface LoginResponse {
+export interface ILoginResponse {
     user: User;
     token: string;
 }
 
 export class UserController {
-    public async create(data: CreateParams): Promise<User> {
+    public async create(data: ICreateParams): Promise<User> {
         return Api.post('/users', data);
     };
     
@@ -29,7 +29,7 @@ export class UserController {
         return Api.delete(`/users/${userId}`);
     };
     
-    public async login(data: LoginParams): Promise<LoginResponse> {
+    public async login(data: ILoginParams): Promise<ILoginResponse> {
         return Api.post('/users/login', data);
     };
 }
