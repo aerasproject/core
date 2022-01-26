@@ -24,7 +24,7 @@ export class UserController {
     public async create(data: ICreateParams): Promise<ITokenResponse> {
         const response = await Api.post('/user', data); 
         
-        return response.data();
+        return response.data;
     };
     
     public async delete(userId: string): Promise<void> {
@@ -34,6 +34,6 @@ export class UserController {
     public async login(data: ILoginParams): Promise<ITokenResponse> {
         const response = await Api.post('/user/login', data);
 
-        return response.data();
+        return response.data;
     };
 }
