@@ -13,7 +13,7 @@ export interface IDataParams {
     complement: string;
 }
 
-export class CreateController {
+export class AddressController {
     public async getAll(): Promise<Array<IAddress>> {
         const response = await Api.get('/address'); 
         
