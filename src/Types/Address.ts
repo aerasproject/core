@@ -1,3 +1,5 @@
+import { IEnvironment } from "./Environment";
+
 export interface IAddress {
     id: string;
     name: string;
@@ -7,6 +9,7 @@ export interface IAddress {
     city: string;
     state: string;
     neighborhood: string;
+    environments: Array<IEnvironment>;
     complement: string;
     createdAt: string;
     updatedAt: string;
