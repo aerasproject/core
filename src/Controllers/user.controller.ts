@@ -2,7 +2,7 @@ import { IUser } from "../Types/User";
 
 import { Api } from "..";
 
-export interface ICreateParams {
+export interface IUserDataParams {
     name: string;
     email: string;
     password: string;
@@ -21,7 +21,7 @@ export interface ITokenResponse {
 }
 
 export class UserController {
-    public async create(data: ICreateParams): Promise<ITokenResponse> {
+    public async create(data: IUserDataParams): Promise<ITokenResponse> {
         const response = await Api.post('/user', data); 
         
         return response.data;

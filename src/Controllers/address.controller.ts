@@ -2,7 +2,7 @@ import { IAddress } from "../Types/Address";
 
 import { Api } from "..";
 
-export interface IDataParams {
+export interface IAddressDataParams {
     name: string;
     isFavorite: boolean;
     street: string;
@@ -26,13 +26,13 @@ export class AddressController {
         return response.data;
     };
 
-    public async create(data: IDataParams): Promise<IAddress> {
+    public async create(data: IAddressDataParams): Promise<IAddress> {
         const response = await Api.post('/address', data); 
         
         return response.data;
     };
     
-    public async edit(addressId: string, data: IDataParams): Promise<IAddress> {
+    public async edit(addressId: string, data: IAddressDataParams): Promise<IAddress> {
         const response = await Api.put(`/address/${addressId}`, data); 
 
         return response.data;
