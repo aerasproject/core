@@ -1,6 +1,6 @@
 import {IEquipment} from '../Types/Equipment'
 
-import { Api, IEnvironment } from "..";
+import { Api } from "..";
 
 export interface IEquipmentDataParams {
     name: string;
@@ -14,16 +14,6 @@ export interface IEquipmentDataParams {
     addressId: string;
 }
 
-interface IGetByIdResponse {
-    equipment: IEquipment;
-    environment: IEnvironment;
-}
-
-// TODO: Arrumar interface
-interface IGetByAddressResponse {
-    batata: IGetByIdResponse[];
-}
-
 export class EquipmentController {
     public async create(data: IEquipmentDataParams): Promise<IEquipment> {
         const response = await Api.post('/equipment', data);
@@ -31,15 +21,18 @@ export class EquipmentController {
         return response.data;
     }
 
-    public async getById(equipmentId: string): Promise<IGetByIdResponse> {
-        return Api.get(`/equipament/${equipmentId}`);
+    public async getById(equipmentId: string): Promise<IEquipment> {
+        const response = await Api.get(`/equipament/${equipmentId}`); 
+        return response.data;
     };
 
-    public async getByAddress(addressId: string): Promise<IGetByAddressResponse> {
-        return Api.get(`/equipament/address/${addressId}`);
+    public async getByAddress(addressId: string): Promise<Array<IEquipment>> {
+        const response = await Api.get(`/equipament/address/${addressId}`)
+        
+        return response.data;
     };
 
-    public async edit(equipmentId: string, data: IEquipmentDataParams): Promise<IGetByIdResponse> {
+    public async edit(equipmentId: string, data: IEquipmentDataParams): Promise<IEquipment> {
         const response = await Api.put(`/equipament/${equipmentId}`, data); 
 
         return response.data;

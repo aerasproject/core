@@ -1,3 +1,5 @@
+import { IEnvironment } from "..";
+
 export interface IEquipment {
     id: string; 
     name: string; 
@@ -7,7 +9,8 @@ export interface IEquipment {
     voltage: string; 
     capacity: string; 
     type: string; 
-    environmentId: string; 
+    environmentId: string;
+    enviroment: IEnvironment;
     addressId: string;  
     createdAt: string; 
     updatedAt: string; 
