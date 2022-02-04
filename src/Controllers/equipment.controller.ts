@@ -7,7 +7,7 @@ export interface IEquipmentDataParams {
     brand: string;
     capacity: string;
     model: string;
-    tag: string;
+    tag: number;
     type: string;
     voltage: string;
     environmentId: string;
