@@ -1,4 +1,4 @@
-import {IEquipment} from '../Types/Equipment'
+import { IEquipment } from '../Types/Equipment'
 
 import { Api } from "..";
 
@@ -16,13 +16,14 @@ export interface IEquipmentDataParams {
 
 export class EquipmentController {
     public async create(data: IEquipmentDataParams): Promise<IEquipment> {
-        const response = await Api.post('/equipment', data);
+        const response = await Api.post('/equipament', data);
 
         return response.data;
     }
 
     public async getById(equipmentId: string): Promise<IEquipment> {
-        const response = await Api.get(`/equipament/${equipmentId}`); 
+        const response = await Api.get(`/equipament/${equipmentId}`);
+
         return response.data;
     };
 
