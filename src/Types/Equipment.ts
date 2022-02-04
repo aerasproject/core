@@ -10,7 +10,7 @@ export interface IEquipment {
     capacity: string; 
     type: string; 
     environmentId: string;
-    enviroment: IEnvironment;
+    environment: IEnvironment;
     addressId: string;  
     createdAt: string; 
     updatedAt: string; 
