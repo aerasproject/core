@@ -15,6 +15,20 @@ export interface ILoginParams {
     password: string;
 }
 
+export interface IChangePasswordParams {
+    oldPassword: string;
+    newPassword: string;
+}
+
+export interface IResetPasswordParams {
+    token: string;
+    password: string;
+}
+
+export interface IForgotPasswordParams {
+    email: string;
+}
+
 export interface ITokenResponse {
     user: IUser;
     token: string;
@@ -35,5 +49,17 @@ export class UserController {
         const response = await Api.post('/user/login', data);
 
         return response.data;
+    };
+
+    public async changePassword(data: IChangePasswordParams): Promise<ITokenResponse> {
+        return Api.put('/user/changepassword', data);
+    };
+
+    public async forgotPassword(data: IForgotPasswordParams): Promise<ITokenResponse> {
+        return Api.post('/user/login', data);
+    };
+
+    public async resetPassword(data: IResetPasswordParams): Promise<ITokenResponse> {
+        return Api.post('/user/login', data);
     };
 }
