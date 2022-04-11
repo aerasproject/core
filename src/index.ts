@@ -1,5 +1,4 @@
 // SERVICES
-
 export * from './Services/Configs';
 export * from './Services/Api';
 
@@ -21,3 +20,7 @@ export * from './Types/PublicAddress';
 
 // UTILS
 export * from './Utils/ApiErrorInterceptor';
+
+// ENUMS
+export * from './Enums/UserRoles';
+export * from './Enums/TechnicianServices';
