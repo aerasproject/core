@@ -24,3 +24,4 @@ export * from './Utils/ApiErrorInterceptor';
 // ENUMS
 export * from './Enums/UserRoles';
 export * from './Enums/TechnicianServices';
+export * from './Enums/CompanyServices';
