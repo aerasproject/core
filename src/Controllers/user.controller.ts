@@ -1,4 +1,5 @@
 import { IUser } from "../Types/User";
+import { USER_ROLES } from "../Enums/UserRoles";
 
 import { Api } from "..";
 
@@ -7,7 +8,7 @@ export interface IUserDataParams {
     email: string;
     password: string;
     document: string;
-    role: string;
+    role: USER_ROLES;
 }
 
 export interface ILoginParams {
