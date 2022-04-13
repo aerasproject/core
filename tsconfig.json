@@ -1,18 +1,18 @@
 {
   "compilerOptions": {
-      "target": "ES6",
-      "module": "commonjs",
-      "sourceMap": true,
-      "outDir": "./lib",
-      "rootDir": "./src",
-      "strict": true,
-      "esModuleInterop": true,
-      "declaration": true,
+    "target": "ES6",
+    "module": "commonjs",
+    "sourceMap": true,
+    "outDir": "./lib",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "declaration": true,
   },
   "include": [
-      "src"
+    "src"
   ],
   "exclude": [
-      "**/*.spec.ts"
+    "**/*.spec.ts"
   ]
 }
