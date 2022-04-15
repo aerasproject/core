@@ -4,6 +4,7 @@ export interface IUser {
     email: string;
     role: string;
     document: string;
+    hasTechnicianProfile: boolean,
     profilePic: string | null;
     createdAt: string;
     updatedAt: string;
