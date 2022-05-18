@@ -9,6 +9,7 @@ export * from './Controllers/environment.controller';
 export * from './Controllers/equipment.controller';
 export * from './Controllers/publicAddress.controller';
 export * from './Controllers/technician.controller';
+export * from './Controllers/company.controller';
 
 // TYPE
 export * from './Types/User';
@@ -17,6 +18,7 @@ export * from './Types/Environment';
 export * from './Types/Equipment';
 export * from './Types/Technician';
 export * from './Types/PublicAddress';
+export * from './Types/Company';
 
 // UTILS
 export * from './Utils/ApiErrorInterceptor';
