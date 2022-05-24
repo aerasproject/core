@@ -5,6 +5,7 @@ export interface IUser {
     role: string;
     document: string;
     hasTechnicianProfile: boolean,
+    hasCompanyProfile: boolean,
     profilePic: string | null;
     createdAt: string;
     updatedAt: string;
