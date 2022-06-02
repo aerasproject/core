@@ -8,12 +8,6 @@ export interface IEnvironmentDataParams {
 }
 
 export class EnvironmentController {
-    apiUrl: string;
-
-    constructor(apiUrl: string) {
-        this.apiUrl = apiUrl;    
-    }
-
     public async getAll(addressId: string): Promise<Array<IEnvironment>> {
         const response = await Api.get(`/environment/${addressId}`);
         
