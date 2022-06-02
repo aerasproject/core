@@ -1,9 +1,13 @@
+import axios from 'axios';
+import { BetaUserController } from './Controllers/beta.user.controller';
+
 // SERVICES
 export * from './Services/Configs';
 export * from './Services/Api';
 
 // CONTROLLERS
 export * from './Controllers/user.controller';
+export * from './Controllers/beta.user.controller';
 export * from './Controllers/address.controller';
 export * from './Controllers/environment.controller';
 export * from './Controllers/equipment.controller';
@@ -27,3 +31,17 @@ export * from './Utils/ApiErrorInterceptor';
 export * from './Enums/UserRoles';
 export * from './Enums/TechnicianServices';
 export * from './Enums/CompanyServices';
+
+export interface InitCoreParams {
+    apiUrl: string;
+}
+
+export function initCore({ apiUrl }: InitCoreParams) {
+    const Api = axios.create({
+        baseURL: apiUrl,
+    });
+
+    const UserController = new BetaUserController(Api);
+
+    return {Api, UserController};
+}
