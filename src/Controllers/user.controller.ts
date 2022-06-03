@@ -16,6 +16,13 @@ export interface ILoginParams {
     password: string;
 }
 
+export interface IUpdateUser {
+  name:	string
+  email:	string
+  document:	string
+  role:	USER_ROLES
+}
+
 export interface IChangePasswordParams {
     oldPassword: string;
     newPassword: string;
@@ -37,30 +44,36 @@ export interface ITokenResponse {
 
 export class UserController {
     public async create(data: IUserDataParams): Promise<ITokenResponse> {
-        const response = await Api.post('/user', data); 
+      const response = await Api.post('/user', data); 
         
-        return response.data;
+      return response.data;
     };
+
+    public async edit(data: IUpdateUser): Promise<IUser> {
+      const response = await Api.put('/user', data);
+
+      return response.data;
+    }
     
     public async delete(userId: string): Promise<void> {
-        return Api.delete(`/user/${userId}`);
+      return Api.delete(`/user/${userId}`);
     };
     
     public async login(data: ILoginParams): Promise<ITokenResponse> {
-        const response = await Api.post('/user/login', data);
+      const response = await Api.post('/user/login', data);
 
-        return response.data;
+      return response.data;
     };
 
     public async changePassword(data: IChangePasswordParams): Promise<ITokenResponse> {
-        return Api.put('/user/changepassword', data);
+      return Api.put('/user/changepassword', data);
     };
 
     public async forgotPassword(data: IForgotPasswordParams): Promise<ITokenResponse> {
-        return Api.post('/user/login', data);
+      return Api.post('/user/login', data);
     };
 
     public async resetPassword(data: IResetPasswordParams): Promise<ITokenResponse> {
-        return Api.post('/user/login', data);
+      return Api.post('/user/login', data);
     };
 }
