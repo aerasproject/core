@@ -1,4 +1,11 @@
 import axios from 'axios';
+
+import { BetaCompanyController } from './Controllers/beta.company.controller';
+import { BetaAddressController } from './Controllers/beta.address.controller';
+import { BetaEnvironmentController } from './Controllers/beta.environment.controller';
+import { BetaEquipmentController } from './Controllers/beta.equipment.controller';
+import { BetaPublicAddressController } from './Controllers/beta.publicAddress.controller';
+import { BetaTechnicianController } from './Controllers/beta.technician.controller';
 import { BetaUserController } from './Controllers/beta.user.controller';
 
 // SERVICES
@@ -33,15 +40,30 @@ export * from './Enums/TechnicianServices';
 export * from './Enums/CompanyServices';
 
 export interface InitCoreParams {
-    apiUrl: string;
+  apiUrl: string;
 }
 
 export function initCore({ apiUrl }: InitCoreParams) {
-    const Api = axios.create({
-        baseURL: apiUrl,
-    });
+  const Api = axios.create({
+    baseURL: apiUrl,
+  });
 
-    const UserController = new BetaUserController(Api);
+  const UserController = new BetaUserController(Api);
+  const CompanyController = new BetaCompanyController(Api);
+  const AddressController = new BetaAddressController(Api);
+  const EnvironmentController = new BetaEnvironmentController(Api);
+  const EquipmentController = new BetaEquipmentController(Api);
+  const PublicAddressController = new BetaPublicAddressController(Api);
+  const TechnicianController = new BetaTechnicianController(Api);
 
-    return {Api, UserController};
+  return {
+    Api, 
+    UserController,
+    CompanyController,
+    AddressController,
+    EnvironmentController,
+    EquipmentController,
+    PublicAddressController,
+    TechnicianController,
+  };
 }
