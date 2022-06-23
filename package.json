@@ -1,5 +1,5 @@
 {
-  "name": "@aerasapp/core",
+  "name": "@aerasproject/core",
   "version": "0.3.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aerasapp/core.git"
+    "url": "git+https://github.com/aerasproject/core.git"
   },
   "author": "Aeras",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aerasapp/core/issues"
+    "url": "https://github.com/aerasproject/core/issues"
   },
-  "homepage": "https://github.com/aerasapp/core#readme",
+  "homepage": "https://github.com/aerasproject/core#readme",
   "dependencies": {
     "axios": "^0.25.0",
     "typescript": "^4.5.5"
