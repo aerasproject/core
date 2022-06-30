@@ -1,5 +1,10 @@
 import axios from 'axios';
 
+// SERVICES
+export * from './Services/Configs';
+export * from './Services/Api';
+
+// CONTROLLERS BETA
 import { BetaCompanyController } from './Controllers/beta.company.controller';
 import { BetaAddressController } from './Controllers/beta.address.controller';
 import { BetaEnvironmentController } from './Controllers/beta.environment.controller';
@@ -7,10 +12,6 @@ import { BetaEquipmentController } from './Controllers/beta.equipment.controller
 import { BetaPublicAddressController } from './Controllers/beta.publicAddress.controller';
 import { BetaTechnicianController } from './Controllers/beta.technician.controller';
 import { BetaUserController } from './Controllers/beta.user.controller';
-
-// SERVICES
-export * from './Services/Configs';
-export * from './Services/Api';
 
 // CONTROLLERS
 export * from './Controllers/user.controller';
