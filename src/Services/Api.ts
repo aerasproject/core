@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
-import { Configs } from '..';
 
+import { Configs } from '..';
 import { ApiErroInterceptor } from '../Utils/ApiErrorInterceptor';
 
 export const Api = axios.create({
