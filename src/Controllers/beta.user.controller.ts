@@ -1,6 +1,12 @@
-import { AxiosInstance } from 'axios';
+import { AxiosInstance } from "axios";
+import { ILoginParams, ITokenResponse } from "Types/Authentication";
 
-import { IChangePasswordParams, IForgotPasswordParams, ILoginParams, ITokenResponse, IUserDataParams, IResetPasswordParams } from './user.controller';
+import {
+  IChangePasswordParams,
+  IForgotPasswordParams,
+  IUserDataParams,
+  IResetPasswordParams,
+} from "./user.controller";
 
 export class BetaUserController {
   api: AxiosInstance;
@@ -10,30 +16,36 @@ export class BetaUserController {
   }
 
   public async create(data: IUserDataParams): Promise<ITokenResponse> {
-    const response = await this.api.post('/user', data);
+    const response = await this.api.post("/user", data);
 
     return response.data;
-  };
+  }
 
   public async delete(userId: string): Promise<void> {
     return this.api.delete(`/user/${userId}`);
-  };
+  }
 
   public async login(data: ILoginParams): Promise<ITokenResponse> {
-    const response = await this.api.post('/user/login', data);
+    const response = await this.api.post("/user/login", data);
 
     return response.data;
-  };
+  }
 
-  public async changePassword(data: IChangePasswordParams): Promise<ITokenResponse> {
-    return this.api.put('/user/changepassword', data);
-  };
+  public async changePassword(
+    data: IChangePasswordParams
+  ): Promise<ITokenResponse> {
+    return this.api.put("/user/changepassword", data);
+  }
 
-  public async forgotPassword(data: IForgotPasswordParams): Promise<ITokenResponse> {
-    return this.api.post('/user/login', data);
-  };
+  public async forgotPassword(
+    data: IForgotPasswordParams
+  ): Promise<ITokenResponse> {
+    return this.api.post("/user/login", data);
+  }
 
-  public async resetPassword(data: IResetPasswordParams): Promise<ITokenResponse> {
-    return this.api.post('/user/login', data);
-  };
+  public async resetPassword(
+    data: IResetPasswordParams
+  ): Promise<ITokenResponse> {
+    return this.api.post("/user/login", data);
+  }
 }
