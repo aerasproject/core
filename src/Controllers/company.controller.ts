@@ -15,4 +15,10 @@ export class CompanyController {
 
     return response.data;
   }
+
+  public async getById(companyId: string): Promise<ICompany> {
+    const response = await Api.get(`/company/${companyId}`);
+
+    return response.data;
+  }
 }
