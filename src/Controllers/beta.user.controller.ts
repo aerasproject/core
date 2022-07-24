@@ -1,12 +1,12 @@
 import { AxiosInstance } from "axios";
 import { ILoginParams, ITokenResponse } from "../Types/Authentication";
-
 import {
   IChangePasswordParams,
   IForgotPasswordParams,
-  IUserDataParams,
   IResetPasswordParams,
-} from "./user.controller";
+} from "./password.controller";
+
+import { IUserDataParams } from "./user.controller";
 
 export class BetaUserController {
   api: AxiosInstance;
