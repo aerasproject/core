@@ -14,4 +14,10 @@ export class TechnicianController {
 
     return response.data;
   }
+
+  public async getById(technicianId: string): Promise<ITechnician> {
+    const response = await Api.get(`/technician/${technicianId}`);
+
+    return response.data;
+  }
 }
