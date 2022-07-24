@@ -1,7 +1,8 @@
-import { IUser } from "../Types/User";
+import { Api } from "..";
+
 import { USER_ROLES } from "../Enums/UserRoles";
 
-import { Api } from "..";
+import { IUser } from "../Types/User";
 import { ITokenResponse } from "../Types/Authentication";
 
 export interface IUserDataParams {
@@ -19,20 +20,6 @@ export interface IUpdateUser {
   role: USER_ROLES;
 }
 
-export interface IChangePasswordParams {
-  oldPassword: string;
-  newPassword: string;
-}
-
-export interface IResetPasswordParams {
-  token: string;
-  password: string;
-}
-
-export interface IForgotPasswordParams {
-  email: string;
-}
-
 export class UserController {
   public async create(data: IUserDataParams): Promise<ITokenResponse> {
     const response = await Api.post("/user", data);
@@ -48,23 +35,5 @@ export class UserController {
 
   public async delete(userId: string): Promise<void> {
     return Api.delete(`/user/${userId}`);
-  }
-
-  public async changePassword(
-    data: IChangePasswordParams
-  ): Promise<ITokenResponse> {
-    return Api.put("/user/changepassword", data);
-  }
-
-  public async forgotPassword(
-    data: IForgotPasswordParams
-  ): Promise<ITokenResponse> {
-    return Api.post("/user/forgotpassword", data);
-  }
-
-  public async resetPassword(
-    data: IResetPasswordParams
-  ): Promise<ITokenResponse> {
-    return Api.post("/user/resetpassword", data);
   }
 }
