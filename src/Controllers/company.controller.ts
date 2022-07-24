@@ -11,8 +11,8 @@ export interface ICompanyDataParams {
 
 export class CompanyController {
   public async create(data: ICompanyDataParams): Promise<ICompany> {
-    const response = await Api.post('/company', data); 
-    
+    const response = await Api.post("/company", data);
+
     return response.data;
-  };
-} 
+  }
+}

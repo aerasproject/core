@@ -11,8 +11,8 @@ export class BetaCompanyController {
   }
 
   public async create(data: ICompanyDataParams): Promise<ICompany> {
-    const response = await this.api.post('/company', data); 
-    
+    const response = await this.api.post("/company", data);
+
     return response.data;
-  };
-} 
+  }
+}
