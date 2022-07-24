@@ -23,6 +23,7 @@ export * from "./Controllers/publicAddress.controller";
 export * from "./Controllers/technician.controller";
 export * from "./Controllers/company.controller";
 export * from "./Controllers/authentication.controller";
+export * from "./Controllers/password.controller";
 
 // TYPE
 export * from "./Types/User";
