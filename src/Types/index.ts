@@ -5,3 +5,4 @@ export * from "./Equipment";
 export * from "./PublicAddress";
 export * from "./Technician";
 export * from "./Company";
+export * from "./Authentication";
