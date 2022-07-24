@@ -11,6 +11,7 @@ export interface IAddressDataParams {
   state: string;
   neighborhood: string;
   complement: string;
+  isPublic: boolean;
 }
 
 export class AddressController {
