@@ -1,6 +1,6 @@
-import { Api } from "Services";
+import { Api } from "../Services";
 
-import { ILoginParams, ITokenResponse } from "Types/Authentication";
+import { ILoginParams, ITokenResponse } from "../Types/Authentication";
 
 export class Authentication {
   public async login(data: ILoginParams): Promise<ITokenResponse> {

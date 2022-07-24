@@ -4,15 +4,15 @@ import { IPublicAddress } from "../Types/PublicAddress";
 import { IPublicAddressDataParams } from "./publicAddress.controller";
 
 export class BetaPublicAddressController {
-  api: AxiosInstance
+  api: AxiosInstance;
 
   constructor(api: AxiosInstance) {
-    this.api = api
+    this.api = api;
   }
 
   public async create(data: IPublicAddressDataParams): Promise<IPublicAddress> {
-    const response = await this.api.post('/publicaddress', data); 
-      
+    const response = await this.api.post("/publicaddress", data);
+
     return response.data;
-  };
+  }
 }

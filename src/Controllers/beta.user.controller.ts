@@ -1,5 +1,5 @@
 import { AxiosInstance } from "axios";
-import { ILoginParams, ITokenResponse } from "Types/Authentication";
+import { ILoginParams, ITokenResponse } from "../Types/Authentication";
 
 import {
   IChangePasswordParams,

@@ -1,5 +1,5 @@
 export interface IPublicAddress {
-  street: string; 
+  street: string;
   number: string;
   city: string;
   state: string;
@@ -8,5 +8,5 @@ export interface IPublicAddress {
   complement: string;
   ownerId: string;
   createdAt: string;
-	updatedAt: string;
+  updatedAt: string;
 }
